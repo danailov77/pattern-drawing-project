@@ -14,7 +14,6 @@ print("8. Rectangle with Hollow Center")
 
 # Step 2: Get the user's choice
 choice = int(input("Enter the number corresponding to your choice: "))
-counter = 0
 # Step 3: Get dimensions based on choice
 if choice in [1, 3, 4, 6, 7]:  # Patterns that need the number of rows
     rows = int(input("Enter the number of rows: "))
