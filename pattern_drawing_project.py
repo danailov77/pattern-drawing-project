@@ -14,7 +14,7 @@ print("8. Rectangle with Hollow Center")
 
 # Step 2: Get the user's choice
 choice = int(input("Enter the number corresponding to your choice: "))
-
+counter = 0
 # Step 3: Get dimensions based on choice
 if choice in [1, 3, 4, 6, 7]:  # Patterns that need the number of rows
     rows = int(input("Enter the number of rows: "))
@@ -24,37 +24,66 @@ elif choice in [2, 5, 8]:  # Patterns that need size
 # Step 4: Generate the selected pattern
 if choice == 1:  # Right-angled Triangle
     # TODO: Loop through rows and print increasing stars
-    pass
+    for i in range(rows + 1):
+        print(i * '*')
 
 elif choice == 2:  # Square with Hollow Center
     # TODO: Create a square with a hollow center
-    pass
+    for i in range(1, size + 1):
+        for k in range(1, size + 1):
+            if i == 1 or i == size or k == 1 or k == size:
+                print('*', end='')
+            else:
+                print(' ', end='')
+        print()
 
 elif choice == 3:  # Diamond
     # TODO: Create a diamond shape using loops
-    pass
+    for i in range(1, rows + 1):
+        print(' ' * (rows - i), end='')
+        print('*' * (2 * i - 1))
+    for j in range(rows - 1, 0, -1):
+        print(' ' * (rows - j), end='')
+        print('*' * (2 * j - 1))
 
 elif choice == 4:  # Left-angled Triangle
     # TODO: Print decreasing stars for each row
-    pass
+    for i in range(rows, 0, -1):
+        print('*' * i)
 
 elif choice == 5:  # Hollow Square
     # TODO: Similar to choice 2 but ensure perfect square logic
-    pass
+    for i in range(1, size + 1):
+        for k in range(1, size + 1):
+            if i == 1 or i == size or k == 1 or k == size:
+                print('*', end='')
+            else:
+                print(' ', end='')
+        print()
 
 elif choice == 6:  # Pyramid
     # TODO: Center-align stars to form a pyramid
-    pass
+    for i in range(1, rows + 1):
+        print(' ' * (rows - i), end='')
+        print('*' * (2 * i - 1))
 
 elif choice == 7:  # Reverse Pyramid
     # TODO: Create an upside-down pyramid
-    pass
+    for i in range(rows, 0, -1):
+        print(' ' * (rows - i), end='')
+        print('*' * (2 * i - 1))
 
 elif choice == 8:  # Rectangle with Hollow Center
     # TODO: Handle separate width and height inputs for rectangle
     width = int(input("Enter the width of the rectangle: "))
     height = int(input("Enter the height of the rectangle: "))
-    pass
+    for i in range(1, height + 1):
+        for k in range(1, width + 1):
+            if i == 1 or i == height or k == 1 or k == width:
+                print('*', end='')
+            else:
+                print(' ', end='')
+        print()
 
 else:
     print("❌ Invalid choice! Please restart the program.")
